@@ -240,7 +240,7 @@
       font-weight: 500;
     }
 
-    input, textarea {
+    input, textarea, select {
       padding: 0.6rem 0.7rem;
       border-radius: 0.5rem;
       border: 1px solid #ccc;
@@ -412,25 +412,6 @@
       display: inline-block;
       border: 1px solid #e0d4c3;
     }
-
-    @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
-      }
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      nav a {
-        margin-left: 0;
-        margin-right: 1rem;
-      }
-      .hero {
-        height: 60vh;
-      }
-    }
   </style>
 </head>
 
@@ -501,7 +482,7 @@
             Ready to book? Choose a time that works for you and we’ll match you with a trusted sitter from our
             network of 500+ experienced dog owners and pet lovers.
           </p>
-          <a href="schedule.html" class="btn btn-primary">Open scheduling</a>
+          <a href="schedule.html" class="btn btn-primary">Open full scheduling page</a>
         </div>
         <div>
           <p><strong>Typical availability:</strong></p>
@@ -514,7 +495,6 @@
         </div>
       </div>
     </section>
-
     <section id="about">
       <h2>About Snuggle &amp; Stroll</h2>
       <div class="section-card two-col">
@@ -561,14 +541,19 @@
       </div>
     </section>
 
+    <!-- X‑FACTOR AVAILABILITY CALENDAR -->
     <section id="availability">
       <h2>Check Availability</h2>
       <div class="section-card">
         <p>Select a date to see available sitters and time slots.</p>
+
         <div class="calendar-container">
           <input type="date" id="calendarDate" />
+
           <div id="availabilityResults" class="availability-results">
-                    </div>
+            <p class="muted">Choose a date to view sitter availability.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -578,6 +563,47 @@
       </p>
     </section>
 
+    <!-- EMBEDDED MINI‑SCHEDULING FORM -->
+    <section id="quick-schedule">
+      <h2>Quick Scheduling Form</h2>
+      <div class="section-card">
+        <form id="quickScheduleForm">
+          <label for="qs-date">Choose a date</label>
+          <input type="date" id="qs-date" required />
+
+          <label for="qs-time">Choose a time</label>
+          <select id="qs-time" required>
+            <option value="">Select a time</option>
+            <option>7:00 AM</option>
+            <option>8:00 AM</option>
+            <option>10:00 AM</option>
+            <option>12:00 PM</option>
+            <option>2:00 PM</option>
+            <option>4:00 PM</option>
+            <option>6:00 PM</option>
+          </select>
+
+          <label for="qs-sitter">Choose a sitter</label>
+          <select id="qs-sitter" required>
+            <option value="">Select a sitter</option>
+            <option>Maya Thompson</option>
+            <option>Jordan Lee</option>
+            <option>Riley Chen</option>
+            <option>Samira Patel</option>
+            <option>Dylan Brooks</option>
+          </select>
+
+          <label for="qs-notes">Notes</label>
+          <textarea id="qs-notes" placeholder="Anything we should know?"></textarea>
+
+          <button type="submit" class="btn btn-primary">Submit Request</button>
+
+          <div id="qs-confirm" style="display:none; margin-top:1rem; padding:1rem; background:#e8f7f6; border-left:4px solid var(--teal); border-radius:0.5rem; color:var(--green); font-weight:600;">
+            Your request has been submitted! We'll reach out shortly.
+          </div>
+        </form>
+      </div>
+    </section>
     <section id="contact">
       <h2>Contact</h2>
       <div class="section-card two-col">
@@ -603,6 +629,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -732,6 +759,12 @@
         e.preventDefault();
         handleSend();
       }
+    });
+
+    // Quick scheduling form logic
+    document.getElementById("quickScheduleForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("qs-confirm").style.display = "block";
     });
   </script>
 

@@ -22,7 +22,6 @@
       line-height: 1.6;
     }
 
-    /* TOP RIBBON NAV */
     header {
       background: linear-gradient(90deg, var(--brown), var(--green));
       color: #fff;
@@ -46,14 +45,10 @@
       height: 40px;
       border-radius: 999px;
       background: var(--yellow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
       overflow: hidden;
     }
 
-    /* Simple silhouette style using basic shapes */
     .logo-icon::before {
       content: "";
       position: absolute;
@@ -64,6 +59,7 @@
       left: 9px;
       bottom: 8px;
     }
+
     .logo-icon::after {
       content: "";
       position: absolute;
@@ -80,10 +76,6 @@
       letter-spacing: 0.03em;
       font-size: 1.1rem;
     }
-    .logo-text-sub {
-      font-size: 0.75rem;
-      opacity: 0.85;
-    }
 
     nav a {
       color: #fff;
@@ -92,6 +84,7 @@
       font-size: 0.95rem;
       position: relative;
     }
+
     nav a::after {
       content: "";
       position: absolute;
@@ -102,11 +95,11 @@
       background: var(--yellow);
       transition: width 0.2s ease;
     }
+
     nav a:hover::after {
       width: 100%;
     }
 
-    /* HERO */
     .hero {
       position: relative;
       height: 70vh;
@@ -172,6 +165,7 @@
       color: var(--brown);
       box-shadow: 0 8px 18px rgba(0,0,0,0.25);
     }
+
     .btn-primary:hover {
       transform: translateY(-1px);
       box-shadow: 0 10px 24px rgba(0,0,0,0.3);
@@ -182,6 +176,7 @@
       color: #fff;
       border: 1px solid #fff;
     }
+
     .btn-outline:hover {
       background: rgba(255,255,255,0.12);
     }
@@ -205,12 +200,12 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     }
 
-    /* PRICING */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
     }
+
     .card {
       background: #fff;
       border-radius: 1rem;
@@ -218,23 +213,25 @@
       box-shadow: 0 6px 16px rgba(0,0,0,0.05);
       border-top: 4px solid var(--teal);
     }
+
     .card h3 {
       margin-bottom: 0.4rem;
       color: var(--green);
     }
+
     .price {
       font-size: 1.3rem;
       font-weight: 600;
       margin-bottom: 0.4rem;
       color: var(--brown);
     }
+
     .muted {
       color: #777;
       font-size: 0.9rem;
       margin-bottom: 0.6rem;
     }
 
-    /* TWO-COL LAYOUTS */
     .two-col {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -246,42 +243,80 @@
       display: grid;
       gap: 0.75rem;
     }
+
     label {
       font-size: 0.9rem;
       font-weight: 500;
     }
+
     input, textarea {
       padding: 0.6rem 0.7rem;
       border-radius: 0.5rem;
       border: 1px solid #ccc;
       font: inherit;
     }
+
     textarea {
       min-height: 120px;
       resize: vertical;
     }
 
-    /* TESTIMONIALS STRIP */
     .testimonials {
       background: linear-gradient(90deg, var(--green), var(--teal));
       color: #fff;
     }
+
     .testimonials-inner {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
       justify-content: center;
     }
+
     .testimonial {
       max-width: 280px;
       font-size: 0.9rem;
       opacity: 0.95;
     }
+
     .testimonial strong {
       display: block;
       margin-top: 0.4rem;
       font-size: 0.85rem;
       opacity: 0.9;
+    }
+
+    .calendar-container {
+      margin-top: 1rem;
+      display: grid;
+      gap: 1rem;
+      max-width: 420px;
+    }
+
+    .availability-results {
+      background: #fff;
+      border-radius: 0.7rem;
+      padding: 1rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+
+    .sitter {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .sitter:last-child {
+      border-bottom: none;
+    }
+
+    .sitter-name {
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .time-slots {
+      font-size: 0.85rem;
+      color: var(--brown);
     }
 
     footer {
@@ -293,7 +328,6 @@
       margin-top: 2rem;
     }
 
-    /* CHATBOT */
     .chatbot-toggle {
       position: fixed;
       bottom: 1.5rem;
@@ -346,12 +380,14 @@
       display: flex;
       border-top: 1px solid #ddd;
     }
+
     .chatbot-input input {
       flex: 1;
       border: none;
       padding: 0.5rem 0.6rem;
       font-size: 0.85rem;
     }
+
     .chatbot-input button {
       border: none;
       background: var(--teal);
@@ -365,9 +401,11 @@
       margin-bottom: 0.4rem;
       max-width: 90%;
     }
+
     .msg.user {
       text-align: right;
     }
+
     .msg.user span {
       background: var(--teal);
       color: #fff;
@@ -375,6 +413,7 @@
       padding: 0.3rem 0.6rem;
       display: inline-block;
     }
+
     .msg.bot span {
       background: #fff;
       border-radius: 12px 12px 12px 0;
@@ -407,10 +446,7 @@
   <header>
     <div class="logo">
       <div class="logo-icon"></div>
-      <div>
-        <div class="logo-text-main">Snuggle &amp; Stroll</div>
-        <div class="logo-text-sub">Pet Sitting &amp; Dog Walking</div>
-      </div>
+      <div class="logo-text-main">Snuggle &amp; Stroll</div>
     </div>
     <nav>
       <a href="#contact">Contact</a>
@@ -535,6 +571,25 @@
       </div>
     </section>
 
+    <section id="availability">
+      <h2>Check Availability</h2>
+      <div class="section-card">
+        <p>Select a date to see available sitters and time slots.</p>
+        <div class="calendar-container">
+          <input type="date" id="calendarDate" />
+          <div id="availabilityResults" class="availability-results">
+            <p class="muted">Choose a date to view sitter availability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="xfactor" style="padding: 1.5rem 8vw; text-align:center; font-size:0.9rem; color:#555;">
+      <p>
+        This interactive calendar previews how a real booking system could work—showing sitter availability, time slots, and fictional staff to demonstrate future functionality.
+      </p>
+    </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <div class="section-card two-col">
@@ -565,7 +620,6 @@
     &copy; <span id="year"></span> Snuggle &amp; Stroll. All rights reserved.
   </footer>
 
-  <!-- CHATBOT -->
   <button class="chatbot-toggle" id="chatbotToggle">Chat with us</button>
   <div class="chatbot-window" id="chatbotWindow">
     <div class="chatbot-header">
@@ -583,6 +637,42 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const sitterData = {
+      "2026-02-16": [
+        { name: "Maya Thompson", times: "8 AM, 11 AM, 3 PM" },
+        { name: "Jordan Lee", times: "10 AM, 1 PM, 6 PM" }
+      ],
+      "2026-02-17": [
+        { name: "Riley Chen", times: "9 AM, 12 PM, 4 PM" },
+        { name: "Samira Patel", times: "7 AM, 2 PM, 5 PM" }
+      ],
+      "2026-02-18": [
+        { name: "Dylan Brooks", times: "8 AM, 12 PM, 7 PM" }
+      ]
+    };
+
+    const calendarInput = document.getElementById("calendarDate");
+    const resultsBox = document.getElementById("availabilityResults");
+
+    calendarInput.addEventListener("change", () => {
+      const date = calendarInput.value;
+      if (!sitterData[date]) {
+        resultsBox.innerHTML = `<p class="muted">No sitters available on this date.</p>`;
+        return;
+      }
+      const sitters = sitterData[date]
+        .map(
+          s => `
+          <div class="sitter">
+            <div class="sitter-name">${s.name}</div>
+            <div class="time-slots">Available times: ${s.times}</div>
+          </div>
+        `
+        )
+        .join("");
+      resultsBox.innerHTML = sitters;
+    });
 
     const toggle = document.getElementById('chatbotToggle');
     const windowEl = document.getElementById('chatbotWindow');
@@ -621,6 +711,7 @@
     toggle.addEventListener('click', () => {
       windowEl.style.display = windowEl.style.display === 'flex' ? 'none' : 'flex';
     });
+
     closeBtn.addEventListener('click', () => {
       windowEl.style.display = 'none';
     });

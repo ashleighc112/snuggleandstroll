@@ -15,4 +15,202 @@
     .hero { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 2rem; padding: 2.5rem 8vw; align-items: center; }
     .hero-text h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #2b4c3f; }
     .hero-text p { margin-bottom: 1.5rem; max-width: 32rem; }
-    .btn { display: inline-block; padding
+    .btn { display: inline-block; padding: 0.75rem 1.4rem; border-radius: 999px; border: none; cursor: pointer; font-size: 0.95rem; text-decoration: none; }
+    .btn-primary { background: #2b4c3f; color: #fff; }
+    .btn-primary:hover { background: #223a31; }
+    .btn-outline { border: 1px solid #2b4c3f; color: #2b4c3f; background: transparent; margin-left: 0.5rem; }
+    .btn-outline:hover { background: #e7f0eb; }
+
+    .hero-video video { width: 100%; border-radius: 1rem; box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+
+    section { padding: 3rem 8vw; }
+    section h3 { font-size: 1.6rem; margin-bottom: 1.5rem; color: #2b4c3f; }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    .card { background: #fff; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    .card h4 { margin-bottom: 0.5rem; color: #2b4c3f; }
+    .price { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .muted { color: #777; font-size: 0.9rem; }
+
+    .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; align-items: flex-start; }
+
+    form { display: grid; gap: 0.75rem; max-width: 420px; }
+    label { font-size: 0.9rem; font-weight: 500; }
+    input, textarea { padding: 0.6rem 0.7rem; border-radius: 0.5rem; border: 1px solid #ccc; font: inherit; }
+    textarea { min-height: 120px; resize: vertical; }
+
+    footer { padding: 1.5rem 8vw; font-size: 0.85rem; color: #777; text-align: center; border-top: 1px solid #eee; margin-top: 2rem; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding-top: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Snuggle &amp; Stroll</h1>
+    <nav>
+      <a href="#pricing">Pricing</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO WITH AUTOPLAY VIDEO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Pet sitting &amp; dog walking that feels like home.</h2>
+        <p>
+          Snuggle &amp; Stroll gives your pets the love, routine, and comfort they deserve—without the stress of a kennel.
+          Trusted in‑home care from real dog people who get it.
+        </p>
+        <a href="#schedule" class="btn btn-primary">Book a visit</a>
+        <a href="#pricing" class="btn btn-outline">View pricing</a>
+      </div>
+      <div class="hero-video">
+        <!-- Replace VIDEO_URL_HERE with your Runway video URL or file path -->
+        <video src="VIDEO_URL_HERE" autoplay muted loop playsinline></video>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <h3>Pricing</h3>
+      <div class="pricing-grid">
+        <div class="card">
+          <h4>Quick Walk</h4>
+          <p class="price">$22 / walk</p>
+          <p class="muted">30‑minute neighborhood walk</p>
+          <ul>
+            <li>Leash walk &amp; potty break</li>
+            <li>Fresh water refill</li>
+            <li>Photo update after each visit</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Standard Sit Visit</h4>
+          <p class="price">$38 / visit</p>
+          <p class="muted">45‑minute in‑home visit</p>
+          <ul>
+            <li>Feeding &amp; fresh water</li>
+            <li>Walk or backyard playtime</li>
+            <li>Cuddles, enrichment, and check‑in notes</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Extended Stay</h4>
+          <p class="price">$95 / night</p>
+          <p class="muted">Overnight in‑home care</p>
+          <ul>
+            <li>Evening &amp; morning walks</li>
+            <li>Full overnight presence</li>
+            <li>House check (mail, lights, plants)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Multi‑Pet Add‑On</h4>
+          <p class="price">+ $8 / extra pet</p>
+          <p class="muted">Applied to any service</p>
+          <ul>
+            <li>Shared walks or playtime</li>
+            <li>Individual feeding routines</li>
+            <li>Custom care notes for each pet</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULING -->
+    <section id="schedule">
+      <h3>Schedule a visit</h3>
+      <div class="two-col">
+        <div>
+          <p>
+            Ready to book? Choose a time that works for you and we’ll match you with a trusted sitter from our
+            network of 500+ experienced dog owners and pet lovers.
+          </p>
+          <p class="muted">
+            You can plug in Calendly, Google Calendar booking, or another scheduler later—this button is a placeholder.
+          </p>
+          <a href="#" class="btn btn-primary">Open scheduling</a>
+        </div>
+        <div>
+          <p><strong>Typical availability:</strong></p>
+          <ul>
+            <li>Morning walks: 7:00 AM – 10:00 AM</li>
+            <li>Midday visits: 11:00 AM – 3:00 PM</li>
+            <li>Evening walks: 5:00 PM – 8:00 PM</li>
+            <li>Overnights: 7:00 PM – 7:00 AM</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h3>About Snuggle &amp; Stroll</h3>
+      <div class="two-col">
+        <div>
+          <p>
+            I started Snuggle &amp; Stroll because I have a dog I absolutely adore—and I couldn’t imagine leaving her
+            in a kennel. The noise, the stress, the unfamiliar environment… it just never felt right.
+          </p>
+          <p>
+            So I built the service I wished existed: in‑home, heart‑led pet care from people who treat your animals
+            like their own. Today, Snuggle &amp; Stroll works with a vetted network of
+            <strong>500+ skilled dog owners and pet sitters</strong> who understand routines, body language, and the
+            little details that make your pet feel safe.
+          </p>
+          <p>
+            Whether it’s a quick walk, a midday check‑in, or an overnight stay, our goal is simple:
+            your pet stays relaxed, loved, and at home—while you get to actually enjoy being away.
+          </p>
+        </div>
+        <div>
+          <ul>
+            <li><strong>Fully insured sitters</strong> in your neighborhood</li>
+            <li><strong>Background‑checked</strong> and reference‑verified</li>
+            <li><strong>Real‑time updates</strong> with photos and notes</li>
+            <li><strong>Custom care plans</strong> for anxious or senior pets</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h3>Contact us</h3>
+      <div class="two-col">
+        <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+        <div>
+          <p><strong>Email:</strong> youremail@example.com</p>
+          <p><strong>Service area:</strong> [Your city / neighborhoods]</p>
+          <p class="muted">
+            We typically respond within one business day. For urgent same‑day requests, please mention “urgent” in your subject line.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Snuggle &amp; Stroll. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

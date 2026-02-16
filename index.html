@@ -166,19 +166,10 @@
       box-shadow: 0 8px 18px rgba(0,0,0,0.25);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.3);
-    }
-
     .btn-outline {
       background: transparent;
       color: #fff;
       border: 1px solid #fff;
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.12);
     }
 
     main section {
@@ -442,7 +433,9 @@
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <div class="logo">
       <div class="logo-icon"></div>
@@ -451,7 +444,7 @@
     <nav>
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
-      <a href="#schedule">Scheduling</a>
+      <a href="schedule.html">Scheduling</a>
       <a href="#pricing">Pricing</a>
     </nav>
   </header>
@@ -464,7 +457,7 @@
         In‑home pet sitting and dog walking that feels like a trusted friend—not a kennel.
       </div>
       <div class="hero-buttons">
-        <a href="#schedule" class="btn btn-primary">Book a visit</a>
+        <a href="schedule.html" class="btn btn-primary">Book a visit</a>
         <a href="#pricing" class="btn btn-outline">View pricing</a>
         <a href="about.html" class="btn btn-outline">Learn about the project</a>
       </div>
@@ -508,10 +501,7 @@
             Ready to book? Choose a time that works for you and we’ll match you with a trusted sitter from our
             network of 500+ experienced dog owners and pet lovers.
           </p>
-          <p class="muted">
-            You can plug in Calendly, Google Calendar booking, or another scheduler later—this button is a placeholder.
-          </p>
-          <a href="#" class="btn btn-primary">Open scheduling</a>
+          <a href="schedule.html" class="btn btn-primary">Open scheduling</a>
         </div>
         <div>
           <p><strong>Typical availability:</strong></p>
@@ -578,9 +568,7 @@
         <div class="calendar-container">
           <input type="date" id="calendarDate" />
           <div id="availabilityResults" class="availability-results">
-            <p class="muted">Choose a date to view sitter availability.</p>
-          </div>
-        </div>
+                    </div>
       </div>
     </section>
 
@@ -605,6 +593,7 @@
 
           <button type="submit" class="btn btn-primary">Send message</button>
         </form>
+
         <div>
           <p><strong>Email:</strong> youremail@example.com</p>
           <p><strong>Service area:</strong> Your city / neighborhoods</p>
@@ -621,14 +610,17 @@
   </footer>
 
   <button class="chatbot-toggle" id="chatbotToggle">Chat with us</button>
+
   <div class="chatbot-window" id="chatbotWindow">
     <div class="chatbot-header">
       <span>SnuggleBot</span>
       <button style="background:none;border:none;color:#fff;font-size:1rem;cursor:pointer;" id="chatbotClose">×</button>
     </div>
+
     <div class="chatbot-body" id="chatbotBody">
       <div class="msg bot"><span>Hi! I’m SnuggleBot. Ask me about pricing, scheduling, or what our sitters do.</span></div>
     </div>
+
     <div class="chatbot-input">
       <input type="text" id="chatbotInput" placeholder="Type a message..." />
       <button id="chatbotSend">Send</button>
@@ -657,10 +649,12 @@
 
     calendarInput.addEventListener("change", () => {
       const date = calendarInput.value;
+
       if (!sitterData[date]) {
         resultsBox.innerHTML = `<p class="muted">No sitters available on this date.</p>`;
         return;
       }
+
       const sitters = sitterData[date]
         .map(
           s => `
@@ -671,6 +665,7 @@
         `
         )
         .join("");
+
       resultsBox.innerHTML = sitters;
     });
 
@@ -693,6 +688,7 @@
 
     function botReply(userText) {
       const t = userText.toLowerCase();
+
       if (t.includes('price') || t.includes('cost')) {
         return 'Our walks start at $22, sit visits at $38, and overnights at $95 per night.';
       }
@@ -705,6 +701,7 @@
       if (t.includes('kennel') || t.includes('home')) {
         return 'We specialize in in‑home care so your pet can stay relaxed in their own space.';
       }
+
       return 'Great question! A human from Snuggle & Stroll will follow up by email if you leave your details in the contact form.';
     }
 
@@ -719,14 +716,17 @@
     function handleSend() {
       const text = inputEl.value.trim();
       if (!text) return;
+
       addMessage(text, 'user');
       inputEl.value = '';
+
       setTimeout(() => {
         addMessage(botReply(text), 'bot');
       }, 400);
     }
 
     sendBtn.addEventListener('click', handleSend);
+
     inputEl.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
@@ -734,5 +734,6 @@
       }
     });
   </script>
+
 </body>
 </html>
